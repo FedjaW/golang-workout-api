@@ -5,17 +5,28 @@ import (
 	"log"
 	"net/http"
 	"os"
+
+	"github.com/fedaw/golang-workout-api/internal/api"
 )
 
 type Application struct {
-	Logger *log.Logger
+	Logger         *log.Logger
+	WorkoutHandler *api.WorkoutHandler
 }
 
 func NewApplication() (*Application, error) {
 	logger := log.New(os.Stdout, "", log.Ldate|log.Ltime)
+
+	// our stores will go here
+
+	// our hanlders will go here
+	workoutHandler := api.NewWorkoutHandler()
+
 	app := &Application{
-		Logger: logger,
+		Logger:         logger,
+		WorkoutHandler: workoutHandler,
 	}
+
 	return app, nil
 }
 
