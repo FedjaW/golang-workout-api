@@ -30,7 +30,7 @@ func main() {
 		WriteTimeout: 30 * time.Second,
 	}
 
-	app.Logger.Printf("listening on port %d\n", port)
+	app.Logger.Printf("Listening on port %d\n", port)
 
 	err = server.ListenAndServe()
 	if err != nil {
